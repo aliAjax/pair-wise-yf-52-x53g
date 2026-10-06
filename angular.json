@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "pair-wise-yf-52": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/pair-wise-yf-52",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "assets": ["src/assets"],
+            "styles": ["src/styles.css"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {"type": "initial", "maximumWarning": "2mb", "maximumError": "5mb"}
+              ],
+              "outputHashing": "all"
+            },
+            "development": {"optimization": false, "extractLicenses": false, "sourceMap": true}
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {"buildTarget": "pair-wise-yf-52:build:production"},
+            "development": {"buildTarget": "pair-wise-yf-52:build:development"}
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}
