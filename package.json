@@ -6,6 +6,7 @@
     "dev": "ng serve --host 0.0.0.0 --port 62017",
     "start": "ng serve --host 0.0.0.0 --port 62017",
     "build": "ng build",
+    "test:merge": "tsc src/app/state/script.merge.spec.ts --outDir .tmp-merge-spec --target ES2022 --module commonjs --moduleResolution node --strict && node .tmp-merge-spec/script.merge.spec.js",
     "preview": "npx http-server dist/pair-wise-yf-52/browser -p 62017"
   },
   "dependencies": {
